@@ -1,23 +1,39 @@
 * {
-	box-sizing: border-box; }
+	box-sizing: border-box;
+	border: 0;
+	margin: 0;
+	padding: 0; }
 
 body {
-	margin: 0;
-	padding: 4%;
-	font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Lato", "Roboto", "Helveltica Neue", sans-serif;
 	font-size: 1.6em;
 	font-weight: 200;
-	line-height: 1.5;
 	overflow: hidden;
-	color: #222; }
+	color: #e8e9e7 }
 
-h1 {
-	font-family: "Baskerville", "Times", serif;
+div.top {
+	background-color: #000;
+	line-height: 1.5;
+	padding: 1rem 5rem;
+	position: fixed;
+	width: 100%; }
+
+p.logo,
+input.search-bar {
+	line-height: 1.6;
+	padding: 0 1rem;
 }
 
-#track {
-	border: 0;
-	border-bottom: 1px solid #999; }
+p.logo {
+	display: inline-block;
+	font-weight: 100; }
+
+input.search-bar {
+	background-color: transparent;
+	border-left: .1rem solid #777;
+	font-size: .8rem; }
+input.search-bar:focus {
+	outline: none; }
 
 img {
 	border-radius: .2rem;
