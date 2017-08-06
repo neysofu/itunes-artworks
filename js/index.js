@@ -8,9 +8,11 @@ function searchTerm() {
 		success: function(data) {
 			if (data["results"].length == 0) {
 				searchError();
-			} else {
+			} else if (data["results"][0]["artworkUrl60"]) {
         var url = data["results"][0]["artworkUrl60"].replace("60x60", "1440x1440");
-				$("#artwork").attr("src", url);
+        $("#artwork").attr("src", url);
+      } else {
+        searchError();
 			}
 		},
 		error: function(a,b,c) {
