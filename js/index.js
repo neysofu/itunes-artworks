@@ -26,8 +26,8 @@ function searchTerm() {
 };
 
 function searchError() {
+	$("#artwork").effect("shake", {distance:250}, 400);
 	$("#artwork").attr("src", "img/default-artwork.png");
-	$("#artwork").effect("shake", {distance:300});
 }
 
 function reset() {
@@ -40,5 +40,11 @@ $(document).ready(function() {
     event.preventDefault();
     reset();
     searchTerm();
+	});
+	$("#download-btn").click(function(event) {
+		event.preventDefault();
+		$("#download").attr("href", $("#artwork").attr("src"));
+		$("#download").attr("download", "");
+		$("#download")[0].click();
 	});
 });
