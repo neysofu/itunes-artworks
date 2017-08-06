@@ -4,7 +4,7 @@ function searchTerm() {
 		url: "https://itunes.apple.com/search",
 		type:"GET",
 		data: $.param({term:query, limit:1}),
-	  dataType: "json",
+	  dataType: "jsonp",
 		success: function(data) {
 			if (data["results"].length == 0) {
 				searchError();
