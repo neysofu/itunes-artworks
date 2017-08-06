@@ -3,7 +3,7 @@ function searchTerm() {
 	$.ajax({
 		url: "https://itunes.apple.com/search",
 		type:"GET",
-		data: $.param({term:query, limit:1}),
+		data: $.param({term:query, limit:6}),
 	  dataType: "jsonp",
 		success: function(data) {
 			if (data["results"].length == 0) {
@@ -13,7 +13,7 @@ function searchTerm() {
         var url = result["artworkUrl60"].replace("60x60", "1440x1440");
         $("#artwork").attr("src", url);
         var artist = result["artistName"] || "unknown";
-        var name = result["collectionName"] || data["results"][0]["trackName"];
+        var name = result["collectionName"] || result["trackName"];
         $("#caption").text(name + " by " + artist);
       } else {
         searchError();
