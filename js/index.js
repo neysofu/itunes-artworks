@@ -9,7 +9,7 @@ function searchTerm() {
 			if (data["results"].length == 0) {
 				searchError();
 			} else {
-				var url = data["results"][0]["artworkUrl60"].replace("60x60", "1440x1440");
+        var url = data["results"][0]["artworkUrl60"].replace("60x60", "1440x1440").replace("http://", "https://");
 				$("#artwork").attr("src", url);
 			}
 		},
