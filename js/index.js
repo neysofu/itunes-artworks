@@ -1,22 +1,33 @@
 function searchTerm() {
-	var query = $(".search-bar").val();
+	var query = $("#query").val();
 	$.ajax({
 		url: "https://itunes.apple.com/search",
 		type:"GET",
-		data: $.param({term:query}),
-	   	dataType: "jsonp",
+		data: $.param({term:query, limit:1}),
+	  dataType: "json",
 		success: function(data) {
-			var url = data["results"][0]["artworkUrl60"].replace("60x60", "1440x1440");
-			var img = $("#artwork").attr("src", url);
+			if (data["results"].length == 0) {
+				searchError();
+			} else {
+				var url = data["results"][0]["artworkUrl60"].replace("60x60", "1440x1440");
+				$("#artwork").attr("src", url);
+			}
+		},
+		error: function(a,b,c) {
+			searchError();
 		}
 	});
 };
 
+function searchError() {
+	$("#artwork").attr("src", "img/loading.gif");
+	$("#artwork").effect("shake", {distance:300});
+}
+
 $(document).ready(function() {
-	$(".search-bar").keypress(function(e) {
-		if (e.which == 13) {
-			searchTerm();
-			return false;
-		}
+	$("form").submit(function(event) {
+    event.preventDefault();
+		$("#artwork").attr("src", "img/loading.gif");
+    searchTerm();
 	});
 });

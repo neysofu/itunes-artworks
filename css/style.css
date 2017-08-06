@@ -1,60 +1,16 @@
-* {
-	box-sizing: border-box;
-	border: 0;
-	margin: 0;
-	padding: 0; }
-
 body {
-	font-family: "Lato", "Roboto", "Helveltica Neue", sans-serif;
-	font-size: 1.6em;
-	font-weight: 200;
-	overflow: hidden;
-	color: #e8e9e7 }
-
-div.top {
-	background-color: #000;
-	line-height: 1.5;
-	padding: 1rem 5rem;
-	position: fixed;
-	width: 100%; }
-
-p.logo,
-input.search-bar {
-	line-height: 1.6;
-	padding: 0 1rem;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url("../img/background.jpeg");
 }
 
-p.logo {
-	display: inline-block;
-	font-weight: 100; }
-
-input.search-bar {
-	background-color: transparent;
-	border-left: .1rem solid #777;
-	font-size: .8rem; }
-input.search-bar:focus {
-	outline: none; }
+.page-header {
+  color: #e8e8e8;
+}
 
 img {
-	border-radius: .2rem;
-	float: right;
-	max-width: 60%; }
-
-a {
-  color: #1e6bb8;
-  text-decoration: none; }
-  a:hover {
-    text-decoration: underline; }
-
-.btn {
-  display: inline-block;
-  margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(255, 255, 255, 0.08);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: .3rem; }
-
-.track {
-	line-height: 1.5rem;
-	border-radius: .5rem; }
+  max-height: 50vh;
+}
