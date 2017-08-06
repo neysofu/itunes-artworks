@@ -20,7 +20,7 @@ function searchTerm() {
 };
 
 function searchError() {
-	$("#artwork").attr("src", "img/default-artowkr.png");
+	$("#artwork").attr("src", "img/default-artwork.png");
 	$("#artwork").effect("shake", {distance:300});
 }
 
