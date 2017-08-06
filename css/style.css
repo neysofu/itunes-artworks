@@ -5,12 +5,9 @@ body {
       rgba(0, 0, 0, 0.75)
     ),
     url("../img/background.jpeg");
-}
-
-.page-header {
   color: #e8e8e8;
 }
 
 img {
-  max-height: 50vh;
+  max-height: 55vh;
 }
